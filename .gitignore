@@ -1,0 +1,6 @@
+
+.DS_Store
+*.pyc
+reviewer_rec_LightGCN/.idea
+reviewer_rec_LightGCN/checkpoints
+reviewer_rec_TFIDF/.idea
