@@ -9,3 +9,4 @@ scipy==1.7.3
 tensorboardX==2.5.1
 # torch==1.10.0+cu111
 tqdm==4.36.1
+Cython==0.29.32
