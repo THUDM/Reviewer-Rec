@@ -19,10 +19,10 @@ Recmodel = register.MODELS[world.model_name](world.config, dataset)
 Recmodel = Recmodel.to(world.device)
 bpr = utils.BPRLoss(Recmodel, world.config)
 
-weight_file = r'D:\reviewer_rec_LightGCN\checkpoints\lgn-reviewer_rec-3-64.pth.tar'
+weight_file = r'./checkpoints/lgn-reviewer_rec-3-64.pth.tar'
 print(f"load and save to {weight_file}")
 
-Recmodel.load_state_dict(torch.load(weight_file, map_location=torch.device('cpu')))
+# Recmodel.load_state_dict(torch.load(weight_file, map_location=torch.device('cpu')))
 Neg_k = 1
 
 # init tensorboard

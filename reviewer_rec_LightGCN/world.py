@@ -16,7 +16,7 @@ from warnings import simplefilter
 os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
 args = parse_args()
 
-ROOT_PATH = "D:/reviewer_rec_LightGCN"
+ROOT_PATH = "./"
 CODE_PATH = ROOT_PATH
 DATA_PATH = os.path.join(ROOT_PATH, 'data')
 BOARD_PATH = os.path.join(CODE_PATH, 'runs')

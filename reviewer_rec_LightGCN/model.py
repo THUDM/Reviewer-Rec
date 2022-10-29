@@ -16,6 +16,7 @@ from torch import nn
 import scipy.sparse as sp
 from scipy.sparse.linalg import svds
 import numpy as np
+from sparsesvd import sparsesvd
 
 
 class BasicModel(nn.Module):    
@@ -182,8 +183,8 @@ class LightGCN(BasicModel):
     
     def getEmbedding(self, users, pos_items, neg_items):
         all_users, all_items = self.computer()
-        print(all_users.shape)
-        print(all_items.shape)
+        # print(all_users.shape)
+        # print(all_items.shape)
         users_emb = all_users[users]
         pos_emb = all_items[pos_items]
         neg_emb = all_items[neg_items]
@@ -271,8 +272,8 @@ class GF_CF(object):
         self.d_mat_i_inv = sp.diags(1/d_inv)
         norm_adj = norm_adj.dot(d_mat)
         self.norm_adj = norm_adj.tocsc()
-        ut, s, self.vt = svds(self.norm_adj, 64)
-        # ut, s, self.vt = sparsesvd(self.norm_adj, 64)
+        # ut, s, self.vt = svds(self.norm_adj, 64)
+        ut, s, self.vt = sparsesvd(self.norm_adj, 64)
         end = time.time()
         print('training time for GF-CF', end-start)
         

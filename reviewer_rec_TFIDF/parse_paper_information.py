@@ -12,7 +12,7 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 # except:
 #     from cogdl import oagbert
 
-from get_paper_embedding.config import TFIDF_MODEL, SVD_MODEL, #fn_paper_text, fn_train, fn_valid, fn_test, 
+from get_paper_embedding.config import TFIDF_MODEL, SVD_MODEL #, fn_paper_text, fn_train, fn_valid, fn_test, 
 from data_preprocess.util_data_preprocess import read_json_file, read_list_from_txt, write_json_file
 
 basedir = os.path.dirname(__file__)
@@ -273,20 +273,20 @@ def parse_all_reviewer_for_one_submission(filepath):
 
 
 if __name__ == '__main__':
-    paper_filepath = r'D:\reviewer_rec_TFIDF\get_paper_embedding\data\paper_detail.json'
-    paper_reviewer_training_part_filepath = r'D:\reviewer_rec_TFIDF\get_paper_embedding\data\train.txt'
-    paper_reviewer_full_filepath = r'D:\reviewer_rec_TFIDF\get_paper_embedding\data\full.txt'
+    paper_filepath = r'get_paper_embedding/data/paper_detail.json'
+    paper_reviewer_training_part_filepath = r'get_paper_embedding/data/train.txt'
+    paper_reviewer_full_filepath = r'get_paper_embedding/data/full.txt'
 
-    submission_history = r'D:\reviewer_rec_TFIDF\get_paper_embedding\data\submission_list.txt'
+    submission_history = r'get_paper_embedding/data/submission_list.txt'
     paper_mapping_dict = parse_paper_mapping_relationship(submission_history)
     id_text_dict = load_paper_id_text_from_file(paper_filepath)
     print('data loaded')
 
     top_k = 20
     training_reviewer_embedding_dict = read_json_file(
-        r'D:\reviewer_rec_TFIDF\get_paper_embedding\embedding_data\training_reviewer_embedding.json')
+        r'get_paper_embedding/embedding_data/training_reviewer_embedding.json')
     paper_embedding_dict = read_json_file(
-        r'D:\reviewer_rec_TFIDF\get_paper_embedding\embedding_data\paper_embedding.json')
+        r'get_paper_embedding/embedding_data/paper_embedding.json')
     print('Embedding data loaded')
     review_history_dict: dict = parse_all_reviewer_for_one_submission(paper_reviewer_full_filepath)
     review_history_training_dict: dict = parse_all_reviewer_for_one_submission(paper_reviewer_training_part_filepath)
