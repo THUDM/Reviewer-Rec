@@ -12,6 +12,10 @@ Please refer to the following steps to run our codes.
 - Network for initial run
 - ```pip install -r requirements.txt``` (Note: sparsesvd can be installed from source)
 
+
+## Processed Data
+We provide the processed data in [data-4k](https://open-data-set.oss-cn-beijing.aliyuncs.com/oag-benchmark/reviewer-rec/dataset_4k.zip) and [data-8k](https://open-data-set.oss-cn-beijing.aliyuncs.com/oag-benchmark/reviewer-rec/dataset_8k.zip).
+
 ## Usage
 
 ### TF-IDF
