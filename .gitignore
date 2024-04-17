@@ -1,0 +1,11 @@
+
+.DS_Store
+*.pyc
+reviewer_rec_LightGCN/.idea
+reviewer_rec_LightGCN/checkpoints
+reviewer_rec_TFIDF/.idea
+reviewer_rec_LightGCN/data/
+reviewer_rec_TFIDF/get_paper_embedding/data/
+reviewer_rec_TFIDF/get_paper_embedding/embedding_data/
+reviewer_rec_TFIDF/get_paper_embedding/svd_model.pkl
+reviewer_rec_TFIDF/get_paper_embedding/tfidf_model.pkl
